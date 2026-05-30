@@ -161,12 +161,13 @@ public class mi_gestor_tareas{
 
     //opcion 4: Mostrar total de tareas pendientes
     /**
-     * funcion para contar el numero de tareas pendientes, esta funcion recibe como parametros un indice y la lista
+     *funcion para contar el numero de tareas pendientes, esta funcion recibe como parametros un indice y la lista
      * completada, esta funcion utiliza recursividad para recorrer la lista completada y contar el numero de tareas pendientes, 
-     * el caso base es cuando el indice llega a ser igual al tamaño de la lista completada, en este caso se retorna 0, 
-     * indicando que no hay tareas pendientes, si el valor en la posicion del indice es false, se suma 1 y se llama recursivamente 
-     * a la funcion con el siguiente indice, si el valor en la posicion del indice es true, se llama recursivamente a la funcion 
-     * con el siguiente indice sin sumar nada, esta funcion retorna el numero total de tareas pendientes.
+     * el caso base es la condicion que terminara el ciclo, cuando el indice llega a ser igual al tamaño de la lista, 
+     * si el valor en la posicion del indice es false, retorna 1 y se llama recursivamente la funcion nuevamente con indice+1
+     * para sumarlo al valor anteriormente retornado y asi hasta que se cumpla el caso base. Si el valor en la 
+     * posicion del indice es true, se llama recursivamente a la funcion nuevamente con indice+1 sin sumar nada, 
+     * esta funcion retorna el numero total de tareas pendientes. 
      */
     public static int contarTareasPendientes(int indice, List<Tarea> tareas){
        if (indice== tareas.size()){//caso base: cuando el indice llega a ser igual al tamaño de la lista completadas.
